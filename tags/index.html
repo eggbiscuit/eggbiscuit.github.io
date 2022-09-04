@@ -132,12 +132,12 @@
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">categories</span>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -190,10 +190,10 @@
       
       <div class="post-body"><div class="tag-cloud">
   <div class="tag-cloud-title">
-    6 tags in total
+    5 tags in total
   </div>
   <div class="tag-cloud-tags">
-    <a href="/tags/Test/" style="font-size: 12px;" class="tag-cloud-0">Test</a> <a href="/tags/game-develop/" style="font-size: 30px;" class="tag-cloud-10">game develop</a> <a href="/tags/history/" style="font-size: 12px;" class="tag-cloud-0">history</a> <a href="/tags/introduction-%E5%85%A5%E9%97%A8/" style="font-size: 12px;" class="tag-cloud-0">introduction(入门)</a> <a href="/tags/programme/" style="font-size: 12px;" class="tag-cloud-0">programme</a> <a href="/tags/reading/" style="font-size: 12px;" class="tag-cloud-0">reading</a>
+    <a href="/tags/Test/" style="font-size: 12px;" class="tag-cloud-0">Test</a> <a href="/tags/game-develop/" style="font-size: 30px;" class="tag-cloud-10">game develop</a> <a href="/tags/history/" style="font-size: 12px;" class="tag-cloud-0">history</a> <a href="/tags/programme/" style="font-size: 12px;" class="tag-cloud-0">programme</a> <a href="/tags/reading/" style="font-size: 12px;" class="tag-cloud-0">reading</a>
   </div>
 </div>
 
@@ -207,6 +207,7 @@
     
 
 
+    <div class="comments"><div id="twikoo-comments"></div></div>
 </div>
   </main>
 
@@ -243,6 +244,27 @@
 
 
 
+<script class="next-config" data-name="twikoo" type="application/json">{"enable":true,"visitor":true,"envId":"https://twikoo-phi-three.vercel.app/","el":"#twikoo-comments"}</script>
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.twikoo.el)
+    .then(() => NexT.utils.getScript(
+      CONFIG.twikoo.jsUrl || 'https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js',
+      { condition: window.twikoo }
+    ))
+    .then(() => {
+      twikoo.init(CONFIG.twikoo);
+    });
+});
+</script>
+<style>
+.post-block, .comments {
+  overflow: visible;
+}
+.tk-owo-emotion {
+  display: inline-block;
+}
+</style>
 
 </body>
 </html>

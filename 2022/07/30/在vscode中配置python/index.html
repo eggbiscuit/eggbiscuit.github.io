@@ -134,12 +134,12 @@
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">categories</span>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -217,6 +217,14 @@
     </span>
 
   
+    <span id="/2022/07/30/%E5%9C%A8vscode%E4%B8%AD%E9%85%8D%E7%BD%AEpython/" class="post-meta-item twikoo_visitors" data-flag-title="在vscode中配置python" title="Views">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="twikoo_visitors"></span>
+    </span>
+  
 </div>
 
             <div class="post-description">贴出了一些在配置过程中学习时需要留意的网站</div>
@@ -290,6 +298,9 @@
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2022/08/31/%E8%AE%BA%E9%AB%98%E8%80%83%E7%9C%9F%E9%A2%98%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7/" rel="next" title="">
+                   <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>
@@ -301,6 +312,7 @@
 
 
 
+    <div class="comments"><div id="twikoo-comments"></div></div>
 </div>
   </main>
 
@@ -337,6 +349,27 @@
 
 
 
+<script class="next-config" data-name="twikoo" type="application/json">{"enable":true,"visitor":true,"envId":"https://twikoo-phi-three.vercel.app/","el":"#twikoo-comments"}</script>
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.twikoo.el)
+    .then(() => NexT.utils.getScript(
+      CONFIG.twikoo.jsUrl || 'https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js',
+      { condition: window.twikoo }
+    ))
+    .then(() => {
+      twikoo.init(CONFIG.twikoo);
+    });
+});
+</script>
+<style>
+.post-block, .comments {
+  overflow: visible;
+}
+.tk-owo-emotion {
+  display: inline-block;
+}
+</style>
 
 </body>
 </html>
