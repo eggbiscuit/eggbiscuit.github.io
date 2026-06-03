@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 5.4.2">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.12.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="RSS 是一种古老而优雅的信息订阅协议，配合现代阅读器 Folo，可以帮助我们从算法推荐的信息茧房中解脱出来，主动掌控自己的信息流。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RSS 与 Folo：告别算法，主动掌控你的信息流">
+<meta property="og:url" content="http://example.com/2026/06/04/RSS%E4%B8%8EFolo%EF%BC%9A%E5%91%8A%E5%88%AB%E7%AE%97%E6%B3%95%E4%BF%A1%E6%81%AF%E8%8C%A7%E6%88%BF/index.html">
+<meta property="og:site_name" content="Eggbiscuit&#39;s Blog">
+<meta property="og:description" content="RSS 是一种古老而优雅的信息订阅协议，配合现代阅读器 Folo，可以帮助我们从算法推荐的信息茧房中解脱出来，主动掌控自己的信息流。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-06-04T00:00:00.000Z">
+<meta property="article:modified_time" content="2026-06-04T00:00:00.000Z">
+<meta property="article:author" content="eggbiscuit">
+<meta property="article:tag" content="RSS">
+<meta property="article:tag" content="tools">
+<meta property="article:tag" content="productivity">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2026/06/04/RSS%E4%B8%8EFolo%EF%BC%9A%E5%91%8A%E5%88%AB%E7%AE%97%E6%B3%95%E4%BF%A1%E6%81%AF%E8%8C%A7%E6%88%BF/">
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2026/06/04/RSS与Folo：告别算法信息茧房/","path":"2026/06/04/RSS与Folo：告别算法信息茧房/","title":"RSS 与 Folo：告别算法，主动掌控你的信息流"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>RSS 与 Folo：告别算法，主动掌控你的信息流 | Eggbiscuit's Blog</title>
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Eggbiscuit's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+  </ul>
+</nav>
+
+</div>
+        
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav">
+              <li class="nav-item nav-level-1"><a class="nav-link" href="#什么是RSS"><span class="nav-number">1.</span> <span class="nav-text">什么是 RSS？</span></a></li>
+              <li class="nav-item nav-level-1"><a class="nav-link" href="#信息茧房"><span class="nav-number">2.</span> <span class="nav-text">算法推荐与信息茧房</span></a></li>
+              <li class="nav-item nav-level-1"><a class="nav-link" href="#RSS工作原理"><span class="nav-number">3.</span> <span class="nav-text">RSS 的工作原理</span></a></li>
+              <li class="nav-item nav-level-1"><a class="nav-link" href="#认识Folo"><span class="nav-number">4.</span> <span class="nav-text">认识 Folo</span></a></li>
+              <li class="nav-item nav-level-1"><a class="nav-link" href="#如何使用Folo"><span class="nav-number">5.</span> <span class="nav-text">如何使用 Folo 优化信息检索</span></a></li>
+              <li class="nav-item nav-level-1"><a class="nav-link" href="#推荐订阅源"><span class="nav-number">6.</span> <span class="nav-text">推荐订阅源</span></a></li>
+              <li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">7.</span> <span class="nav-text">总结</span></a></li>
+            </ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="eggbiscuit"
+      src="/images/touxiang.jfif">
+  <p class="site-author-name" itemprop="name">eggbiscuit</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/eggbiscuit?tab=repositories" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;eggbiscuit?tab&#x3D;repositories" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+    <div class="main-inner post posts-expand">
+
+<div class="post-block">
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2026/06/04/RSS%E4%B8%8EFolo%EF%BC%9A%E5%91%8A%E5%88%AB%E7%AE%97%E6%B3%95%E4%BF%A1%E6%81%AF%E8%8C%A7%E6%88%BF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.jfif">
+      <meta itemprop="name" content="eggbiscuit">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Eggbiscuit's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="RSS 与 Folo：告别算法，主动掌控你的信息流 | Eggbiscuit's Blog">
+      <meta itemprop="description" content="RSS 是一种古老而优雅的信息订阅协议，配合现代阅读器 Folo，可以帮助我们从算法推荐的信息茧房中解脱出来，主动掌控自己的信息流。">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          RSS 与 Folo：告别算法，主动掌控你的信息流
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      <time title="Created: 2026-06-04" itemprop="dateCreated datePublished" datetime="2026-06-04T00:00:00+08:00">2026-06-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/tech/" itemprop="url" rel="index"><span itemprop="name">tech</span></a>
+        </span>
+    </span>
+</div>
+
+            <div class="post-description">RSS 是一种古老而优雅的信息订阅协议，配合现代阅读器 Folo，可以帮助我们从算法推荐的信息茧房中解脱出来，主动掌控自己的信息流。</div>
+        </div>
+      </header>
+
+    <div class="post-body" itemprop="articleBody">
+
+      <p>我们每天打开微博、抖音、小红书，刷到的内容是算法帮你"精心挑选"的——但这真的是你想要的信息吗？本文聊聊一种更古老、更纯粹的信息获取方式：<strong>RSS</strong>，以及如何用现代工具 <strong>Folo</strong> 把它发挥到极致。</p>
+
+      <h1 id="什么是RSS"><a href="#什么是RSS" class="headerlink" title="什么是RSS"></a>什么是 RSS？</h1>
+
+      <p>RSS（Really Simple Syndication，简易信息聚合）是一种基于 XML 的 Web 内容分发格式，诞生于 1999 年。它的核心思想非常简单：<strong>网站将自己的更新内容以标准格式发布，读者用 RSS 阅读器订阅，就能自动接收所有新内容</strong>，完全不依赖算法推荐。</p>
+
+      <p>想象一下：你订阅了 10 个博客、5 个科技媒体、3 个 GitHub Release 通知，所有新内容都按时间顺序整齐地出现在你的阅读器里——没有广告插入，没有算法干预，没有"你可能喜欢"。这就是 RSS 的魅力所在。</p>
+
+      <p>一个典型的 RSS Feed URL 长这样：</p>
+      <pre><code>https://sspai.com/feed
+https://github.com/vitejs/vite/releases.atom
+https://feeds.feedburner.com/hacker-news/newest</code></pre>
+
+      <h1 id="信息茧房"><a href="#信息茧房" class="headerlink" title="算法推荐与信息茧房"></a>算法推荐与信息茧房</h1>
+
+      <p>现代平台的推荐算法本质上是一个<strong>商业工具</strong>，而非信息工具。它的目标是最大化你的停留时长和互动率，而不是帮你构建完整的知识体系。算法会不断强化你已有的偏好，过滤掉"不够吸引你"的内容，久而久之便形成了所谓的"信息茧房"——你只看到了你"爱看"的，而不是你"该看"的。</p>
+
+      <p>更危险的是，你很难意识到自己身处茧房之中。你觉得自己每天都在"获取信息"，实际上只是在消费经过筛选的娱乐内容。对于想要保持独立思考、持续学习的人来说，RSS 订阅是一种很好的解药：<strong>你主动选择信息源，算法无从插手</strong>。</p>
+
+      <h1 id="RSS工作原理"><a href="#RSS工作原理" class="headerlink" title="RSS 的工作原理"></a>RSS 的工作原理</h1>
+
+      <p>RSS 的技术实现相当简洁。网站服务器维护一个 <code>.xml</code> 或 <code>.atom</code> 格式的文件，每次发布新内容时更新该文件。RSS 阅读器定期轮询（Poll）这些 URL，检测到更新后便拉取新条目显示给用户。</p>
+
+      <p>整个流程可以概括为：</p>
+
+      <ol>
+        <li>用户在阅读器中添加一个 Feed URL（如 <code>https://example.com/feed.xml</code>）</li>
+        <li>阅读器按设定间隔（如每 15 分钟）请求该 URL</li>
+        <li>服务器返回 XML 文档，包含最新文章的标题、摘要、链接、发布时间等</li>
+        <li>阅读器解析 XML，将新条目呈现给用户</li>
+        <li>用户点击感兴趣的条目，跳转到原文</li>
+      </ol>
+
+      <p>这套机制完全去中心化，不依赖任何第三方平台，也不需要账号。网站只要提供 Feed，任何人都能订阅。</p>
+
+      <h1 id="认识Folo"><a href="#认识Folo" class="headerlink" title="认识 Folo"></a>认识 Folo</h1>
+
+      <p><a href="https://folo.is" target="_blank" rel="noopener">Folo</a> 是一款现代化的 RSS 阅读器，由 <a href="https://github.com/RSSNext/Folo" target="_blank" rel="noopener">RSSNext 团队</a>开发，开源且跨平台（支持 macOS、Windows、Linux、iOS、Android 以及 Web 端）。与传统 RSS 阅读器相比，Folo 有几个显著亮点：</p>
+
+      <ul>
+        <li><strong>AI 摘要与翻译</strong>：对订阅内容自动生成摘要，支持多语言翻译，可以快速判断是否值得精读</li>
+        <li><strong>内容聚合增强</strong>：不只支持标准 RSS/Atom，还支持订阅 Twitter/X 用户、YouTube 频道、播客、GitHub Release 等多种内容类型</li>
+        <li><strong>Power（积分）系统</strong>：Folo 内置了一套基于区块链的创作者激励机制，用户可以用 Power 打赏优质内容创作者</li>
+        <li><strong>极简 UI</strong>：界面设计非常克制，以内容为中心，减少视觉干扰</li>
+        <li><strong>跨设备同步</strong>：登录账号后，已读状态、收藏、订阅列表全平台同步</li>
+      </ul>
+
+      <h1 id="如何使用Folo"><a href="#如何使用Folo" class="headerlink" title="如何使用 Folo 优化信息检索"></a>如何使用 Folo 优化信息检索</h1>
+
+      <p>下面是我个人使用 Folo 构建信息流的方法，供大家参考：</p>
+
+      <p><strong>第一步：按主题建立分组（Lists）</strong></p>
+      <p>不要把所有订阅混在一起，按主题分组管理。例如我会分为：<code>Tech News</code>、<code>AI/ML</code>、<code>Finance</code>、<code>Indie Blogs</code>、<code>GitHub Updates</code> 等。这样打开阅读器时可以按优先级快速浏览不同分组。</p>
+
+      <p><strong>第二步：设置阅读节奏</strong></p>
+      <p>RSS 的优势是异步获取，不必实时盯着。建议设定固定的"阅读时间"，比如每天早上花 20 分钟浏览昨天的更新，而不是随时随地刷。这能大幅降低信息焦虑。</p>
+
+      <p><strong>第三步：利用 AI 摘要快速筛选</strong></p>
+      <p>Folo 的 AI 摘要功能可以帮你快速判断哪些文章值得深读，哪些可以跳过。对于英文内容，AI 翻译功能也能节省大量时间。遇到真正感兴趣的内容，再点进去精读原文。</p>
+
+      <p><strong>第四步：订阅 GitHub Release 追踪技术动态</strong></p>
+      <p>对于开发者来说，Folo 订阅 GitHub Release 是个非常实用的功能。比如订阅 <code>https://github.com/vitejs/vite/releases.atom</code>，就能第一时间知道 Vite 发布了新版本，而不需要去刷 Twitter 或等别人转发。</p>
+
+      <p><strong>第五步：找到并收藏高质量 Feed</strong></p>
+      <p>Folo 有一个社区共享的订阅源发现功能，可以看到其他用户订阅了哪些 Feed，方便发现自己不知道的优质内容源。这是一种比算法推荐更可信的"社交推荐"，因为背后是真实用户的主动选择。</p>
+
+      <h1 id="推荐订阅源"><a href="#推荐订阅源" class="headerlink" title="推荐订阅源"></a>推荐订阅源</h1>
+
+      <p>这里分享几个我个人在用的订阅源，涵盖技术、AI 和独立博客方向：</p>
+
+      <ul>
+        <li><strong>Hacker News 热帖</strong>：<code>https://hnrss.org/frontpage</code> — 每天技术圈最热的讨论，纯社区投票，没有算法干预</li>
+        <li><strong>少数派</strong>：<code>https://sspai.com/feed</code> — 高质量中文数字生活和效率工具内容</li>
+        <li><strong>Paul Graham（pg）</strong>：<code>http://www.paulgraham.com/rss.html</code> — YC 创始人，关于创业和人生的深度文章</li>
+        <li><strong>The Batch（吴恩达）</strong>：<code>https://www.deeplearning.ai/the-batch/feed/</code> — 每周 AI 领域最值得关注的进展，干货密度极高</li>
+        <li><strong>GitHub Trending（非官方）</strong>：<code>https://rsshub.app/github/trending/daily/any/zh</code> — 每日 GitHub 热门项目，通过 RSSHub 实现</li>
+        <li><strong>arxiv cs.AI</strong>：<code>https://rss.arxiv.org/rss/cs.AI</code> — AI 领域最新论文，适合跟踪学术前沿</li>
+      </ul>
+
+      <p>其中 <a href="https://rsshub.app" target="_blank" rel="noopener">RSSHub</a> 值得特别一提，它是一个开源项目，可以为几乎任何没有原生 RSS 的网站生成订阅源，包括微博、B 站、知乎等，大大扩展了 RSS 的覆盖范围。</p>
+
+      <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1>
+
+      <p>信息时代，选择"如何获取信息"本身就是一种重要的能力。算法推荐降低了信息获取的门槛，但也在悄悄削弱你的信息自主权。RSS 让你重新成为信息流的主人——你决定关注谁，你决定什么时候读，你决定读多久。</p>
+
+      <p>Folo 把这套古老的协议包装进了现代化的体验，AI 摘要、多内容类型支持、跨平台同步，让 RSS 不再是极客的专利，而是任何人都能上手的工具。如果你也厌倦了被算法牵着鼻子走，不妨从今天开始，花半小时搭建属于自己的信息订阅体系。</p>
+
+      <p>我的 Folo 订阅列表还在持续迭代中，欢迎在评论区交流你的 RSS 使用心得 :)</p>
+
+    </div>
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me a coffee. Thank you!</div>
+  <button>
+    Donate
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.jpg" alt="eggbiscuit WeChat Pay">
+        <span>WeChat Pay</span>
+      </div>
+      <div>
+        <img src="/images/alipay.jpg" alt="eggbiscuit Alipay">
+        <span>Alipay</span>
+      </div>
+  </div>
+</div>
+
+          <div class="followme">
+  <span>Welcome to my other publishing channels</span>
+  <div class="social-list">
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/images/%E5%85%AC%E4%BC%97%E5%8F%B7.png">
+          <span class="icon">
+            <i class="fab fa-weixin"></i>
+          </span>
+          <span class="label">WeChat</span>
+        </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/RSS/" rel="tag"># RSS</a>
+              <a href="/tags/tools/" rel="tag"># tools</a>
+              <a href="/tags/productivity/" rel="tag"># productivity</a>
+          </div>
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/08/28/%E6%8B%8D%E6%91%84%E8%AE%B0%E5%BD%95/" rel="prev" title="拍摄记录：正哥点心专家">
+                  <i class="fa fa-chevron-left"></i> 拍摄记录：正哥点心专家
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+    <div class="comments"><div id="twikoo-comments"></div></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2026</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">eggbiscuit</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> &amp; <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+<script class="next-config" data-name="twikoo" type="application/json">{"enable":true,"visitor":true,"envId":"https://twikoo-crazyhaoguang-gmailcom.vercel.app/","el":"#twikoo-comments"}</script>
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.twikoo.el)
+    .then(() => NexT.utils.getScript(
+      CONFIG.twikoo.jsUrl || 'https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js',
+      { condition: window.twikoo }
+    ))
+    .then(() => {
+      twikoo.init(CONFIG.twikoo);
+    });
+});
+</script>
+<style>
+.post-block, .comments {
+  overflow: visible;
+}
+.tk-owo-emotion {
+  display: inline-block;
+}
+</style>
+
+</body>
+</html>
